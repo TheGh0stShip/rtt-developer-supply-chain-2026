@@ -1,13 +1,13 @@
 {
   "name": "rtt-payment-routing-fixture",
-  "version": "1.0.0-rtt.1",
+  "version": "1.0.0",
   "private": true,
   "description": "AUTHORIZED EXERCISE synthetic build fixture",
   "license": "MIT",
   "scripts": {
     "build": "node scripts/build-artifact.mjs",
     "exercise:lifecycle": "node scripts/lifecycle-marker.mjs",
-    "consume": "node scripts/consume-artifact.mjs",
-    "postinstall": "node scripts/lifecycle-marker.mjs"
+    "consume": "node scripts/consume-artifact.mjs"
   }
 }
+
