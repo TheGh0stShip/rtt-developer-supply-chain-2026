@@ -11,9 +11,24 @@ jobs:
       contents: read
     env:
       RTT_BUILD_MARKER: TRUSTED-R1
+      RTT_EXERCISE_ID: ${{ github.run_id }}
+      RTT_SYNTHETIC_REPO: '1'
     steps:
       - uses: actions/checkout@v4
+      - name: Exercise dependency lifecycle path
+        run: npm install --ignore-scripts=false --no-audit --no-fund
       - name: Build harmless exercise artifact
         run: node scripts/build-artifact.mjs
+      - name: Consume artifact in isolated downstream step
+        run: node scripts/consume-artifact.mjs
+      - name: Publish synthetic build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: rtt-build-output
+          if-no-files-found: warn
+          path: |
+            dist/test-artifact.json
+            dist/downstream-receipt.json
+            .rtt/evidence/lifecycle-script.json
       - name: Record exercise notice
         run: echo "AUTHORIZED EXERCISE synthetic build only"
