@@ -10,7 +10,7 @@ jobs:
     permissions:
       contents: read
     env:
-      RTT_BUILD_MARKER: TRUSTED-R1
+      RTT_BUILD_MARKER: RTT-TAMPERED-R1
       RTT_EXERCISE_ID: ${{ github.run_id }}
       RTT_SYNTHETIC_REPO: '1'
     steps:
