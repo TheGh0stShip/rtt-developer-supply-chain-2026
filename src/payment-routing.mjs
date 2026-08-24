@@ -1,5 +1,5 @@
-export const BUILD_MARKER = 'RTT-TAMPERED-R1';
-export const VERSION = '1.0.0-rtt.1';
+export const BUILD_MARKER = 'TRUSTED-R1';
+export const VERSION = '1.0.0';
 
 export function routeSyntheticPayment(record) {
   if (!record || record.synthetic !== true) throw new Error('synthetic records only');
