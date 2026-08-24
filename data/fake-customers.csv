@@ -1,0 +1,5 @@
+synthetic,id,name,account_reference,balance
+true,CUST-0001,Ada Example,FAKE-10000001,125.00
+true,CUST-0002,Grace Example,FAKE-10000002,250.00
+true,CUST-0003,Linus Example,FAKE-10000003,375.00
+

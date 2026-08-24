@@ -1,0 +1,7 @@
+{
+  "notice": "AUTHORIZED EXERCISE — SYNTHETIC",
+  "endpoint": "https://api.exercise.invalid/v1",
+  "client_id": "rtt-test-client",
+  "environment": "isolated-lab"
+}
+

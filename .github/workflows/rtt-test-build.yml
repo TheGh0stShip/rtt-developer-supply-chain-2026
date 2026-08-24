@@ -1,0 +1,19 @@
+name: RTT isolated test build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  synthetic-build:
+    if: ${{ vars.RTT_SYNTHETIC_LAB == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      RTT_BUILD_MARKER: TRUSTED-R1
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build harmless exercise artifact
+        run: node scripts/build-artifact.mjs
+      - name: Record exercise notice
+        run: echo "AUTHORIZED EXERCISE synthetic build only"
